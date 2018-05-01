@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r}
+setwd("C:/CeliaFiles/Teaching/OHBM2018/ModuleReproducibility/")
+```
+
+## Including Plots
+
+
+```{r}
+
+X <- matrix(rnorm(1000*100), nrow = 1000)
+Y <- X %*% c(1.0, 0.8, 0.6, 0.4, 0.2, rep(0, 95)) + rnorm(1000)
+
+library(glmnet)
+fit1 <- glmnet(X,Y)
+summary(fit1)
+```
+
